@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fc;
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .counter-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .count {
+      font-size: 48px;
+      margin-bottom: 25px;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 30%;
+    }
+
+    .btn.increment {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .btn.decrement {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn.reset {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="counter-container">
+    <h1>Counter App</h1>
+    <div class="count" id="count">0</div>
+    <div class="btn-group">
+      <button class="btn decrement" onclick="decrement()">-</button>
+      <button class="btn reset" onclick="reset()">Reset</button>
+      <button class="btn increment" onclick="increment()">+</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const countEl = document.getElementById("count");
+
+    function updateDisplay() {
+      countEl.textContent = count;
+    }
+
+    function increment() {
+      count++;
+      updateDisplay();
+    }
+
+    function decrement() {
+      count--;
+      updateDisplay();
+    }
+
+    function reset() {
+      count = 0;
+      updateDisplay();
+    }
+  </script>
+
+</body>
+</html>
